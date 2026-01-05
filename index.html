@@ -4,9 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <script type="module" src="script.js"></script>
+    <nav class="navbar">
+      <div class="navbarLeft">
+        <img class="logo" src="/assets/images/Logo.svg" alt="Logo" />
+        <input class="inputSearch" type="text" placeholder="Search events" />
+        <div class="inputWrapper">
+          <input class="inputView" type="text" value="Mountain View, CA" />
+          <button class="btnSearch">
+            <img src="/assets/icons/Search_icon.svg" alt="" />
+          </button>
+        </div>
+      </div>
+      <div class="navbarRight">
+        <div class="language">
+          <img src="/assets/icons/Geo.svg" alt="" /> <a href="#">English</a>
+        </div>
+
+        <a href="#">Log in</a>
+        <button>Sign up</button>
+      </div>
+    </nav>
+    <script type="module" src="/scripts/script.js"></script>
   </body>
 </html>
