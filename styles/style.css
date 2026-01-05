@@ -78,3 +78,28 @@ input {
   border: none;
   border-radius: 8px;
 }
+main {
+  max-width: 1196px;
+  margin: 0 auto;
+}
+h1 {
+  font-size: 42px;
+  margin-bottom: 24.5px;
+}
+.meetUp {
+  display: flex;
+  align-items: center;
+  min-height: 434px;
+}
+.meetUpLeft p {
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+.meetUpLeft button {
+  background-color: #00798a;
+  border: none;
+  color: #ffffff;
+  border-radius: 8px;
+  width: 125px;
+  height: 40px;
+}
