@@ -103,3 +103,75 @@ h1 {
   width: 125px;
   height: 40px;
 }
+.eventsTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.eventsTop button {
+  width: 239px;
+  height: 44px;
+  background-color: #97cad11f;
+  color: #00798a;
+  border: none;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.eventsTop img {
+  margin-left: 15px;
+}
+.eventsTop a {
+  font-size: 16px;
+  color: #00798a;
+}
+.leftTitleGroup {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.leftTitleGroup h3 {
+  font-size: 28px;
+}
+.eventsCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(272px, 1fr));
+  gap: 24px;
+}
+
+.cardEvent {
+  max-width: 272px;
+}
+.eventsCardTop img {
+  width: 100%;
+  margin-bottom: 12px;
+}
+.eventsCardBottom {
+  display: flex;
+  gap: 22px;
+  flex-direction: column;
+}
+.eventsCardBottom h4 {
+  font-size: 20px;
+}
+.typeEvent {
+  font-size: 14px;
+}
+.dataEvent {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.cardInfo {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 76px;
+}
+.cardInfo p {
+  font-size: 16px;
+}
+.dataEvent img,
+.quantity img,
+.status img {
+  vertical-align: middle;
+}
