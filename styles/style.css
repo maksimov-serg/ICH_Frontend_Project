@@ -22,6 +22,9 @@ nav {
   align-items: center;
   flex-wrap: wrap;
 }
+h3 {
+  font-size: 28px;
+}
 input {
   min-height: 42px;
   border: 1px solid #d9d9d9;
@@ -180,4 +183,60 @@ h1 {
 }
 .onlineTop {
   margin-top: 40px;
+}
+.sign {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 56px 36px;
+  background-color: #97cad114;
+  margin-bottom: 64px;
+}
+.signLeft {
+  display: flex;
+  flex-direction: column;
+}
+.signLeft button {
+  align-self: flex-start;
+  width: 192px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  background-color: #e32359;
+  color: #ffffff;
+  font-size: 16px;
+}
+.signLeft h3,
+p {
+  margin-bottom: 16px;
+}
+.signLeft p {
+  font-size: 16px;
+}
+.categoriesTypes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 64px;
+}
+.categories h3 {
+  margin-bottom: 24px;
+}
+.categorieItem {
+  width: 135px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 22px;
+  padding-bottom: 16px;
+  background-color: #97cad114;
+  text-align: center;
+}
+.categorieItem p {
+  line-height: 24px;
+  font-size: 16px;
+  padding-left: 19px;
+  padding-right: 19px;
 }
