@@ -12,6 +12,9 @@ a {
   color: #212121;
   font-weight: 500;
 }
+ul {
+  list-style: none;
+}
 button {
   cursor: pointer;
 }
@@ -28,6 +31,9 @@ h3 {
 input {
   min-height: 42px;
   border: 1px solid #d9d9d9;
+}
+p {
+  font-size: 16px;
 }
 .navbarLeft {
   display: flex;
@@ -239,4 +245,172 @@ p {
   font-size: 16px;
   padding-left: 19px;
   padding-right: 19px;
+}
+.citiesTop p {
+  color: #707070;
+  margin-top: 16px;
+  margin-bottom: 28px;
+}
+.citiesBottom {
+  display: flex;
+  gap: 42px;
+  flex-wrap: wrap;
+  margin-bottom: 64px;
+}
+.city {
+  display: inline-flex;
+  flex-direction: column;
+}
+.city p {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 24px;
+}
+.cityName {
+  text-align: center;
+}
+.meetUpWork h3 {
+  margin-bottom: 24px;
+}
+.meetUpWorkItems {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 64px;
+}
+.workItem {
+  display: flex;
+  background-color: #97cad114;
+  min-width: 580px;
+}
+.workItemSvg {
+  margin: 32px 24px 0;
+}
+.workItemText {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 32px;
+}
+.workItemText h4,
+.workItemText p {
+  margin: 0;
+}
+
+.workItemText a {
+  color: #00798a;
+}
+.friendsTop h3 {
+  margin-bottom: 16px;
+}
+.friendsTop p {
+  margin-bottom: 28px;
+}
+.friends p {
+  color: #707070;
+}
+.friendsCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 53.5px;
+}
+.friendsCard {
+  display: flex;
+  flex-direction: column;
+  max-width: 376px;
+}
+.friendsCardTop {
+  margin-bottom: 24px;
+}
+.friendsCardBottom h4 {
+  margin-bottom: 12px;
+}
+.friendsCardBottom p {
+  margin-bottom: 16px;
+}
+.friendsCardBottom a {
+  color: #00798a;
+}
+footer {
+  background-color: #212121;
+  color: #f6f7f8;
+}
+.footerContainer {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+.footerTop {
+  display: flex;
+  align-items: center;
+  padding-top: 24px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #707070;
+}
+footer p {
+  font-weight: 600;
+  padding-right: 35px;
+  margin: 0;
+}
+.footerTop button {
+  font-size: 16px;
+  padding: 10px 14px;
+  color: #ffffff;
+  background-color: inherit;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+}
+.footerColumns {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 24px;
+  padding-bottom: 36px;
+}
+footer a {
+  color: #c5c4c4;
+  font-weight: 400;
+  font-size: 14px;
+}
+.footerColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.footerSocial {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 24px;
+}
+.social p {
+  margin-bottom: 12px;
+}
+.socialIcons {
+  display: flex;
+  gap: 32px;
+}
+.socialIcons img {
+  width: 25px;
+  height: 25px;
+}
+.stores {
+  display: flex;
+  gap: 23px;
+}
+.stores img {
+  height: 40px;
+}
+.footerBottom {
+  display: flex;
+  padding-top: 32px;
+  padding-bottom: 40px;
+  gap: 24px;
+}
+.footerBottom ul {
+  display: flex;
+  gap: 24px;
+}
+.footerBottom p {
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
 }
