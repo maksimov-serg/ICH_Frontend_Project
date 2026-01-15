@@ -13,7 +13,10 @@
   <body>
     <header class="navbar">
       <div class="navbarLeft">
-        <img class="logo" src="/assets/images/Logo.svg" alt="Logo" />
+        <a href="/index.html" class="logoLink"
+          ><img class="logo" src="/assets/images/Logo.svg" alt="Logo"
+        /></a>
+
         <input class="inputSearch" type="text" placeholder="Search events" />
         <div class="inputWrapper">
           <input class="inputView" type="text" value="Mountain View, CA" />
@@ -35,7 +38,53 @@
       <div class="eventsLeft">
         <h3>Events near New York, NY</h3>
         <h4 class="eventsTitle">Events</h4>
-        <div class="filters">
+        <div class="filters" id="filters">
+          <label class="filterField">
+            <span class="filterLabel">Date</span>
+            <input id="filterDate" type="date" class="filterControl" />
+          </label>
+
+          <label class="filterField">
+            <span class="filterLabel">Type</span>
+            <select id="filterType" class="filterControl">
+              <option value="any">Any type</option>
+              <option value="offline">In person</option>
+              <option value="online">Online</option>
+            </select>
+          </label>
+
+          <label class="filterField">
+            <span class="filterLabel">Distance</span>
+            <select id="filterDistance" class="filterControl">
+              <option value="any">Any distance</option>
+              <option value="5">Up to 5 km</option>
+              <option value="10">Up to 10 km</option>
+              <option value="25">Up to 25 km</option>
+              <option value="50">Up to 50 km</option>
+            </select>
+          </label>
+
+          <label class="filterField">
+            <span class="filterLabel">Category</span>
+            <select id="filterCategory" class="filterControl">
+              <option value="any">Any category</option>
+              <!-- варианты добавим из JS автоматически -->
+            </select>
+          </label>
+
+          <button id="filtersReset" class="filterResetBtn" type="button">
+            Reset
+          </button>
+        </div>
+        <div id="eventsList"></div>
+        <p
+          id="eventsEmpty"
+          style="display: none; padding: 16px 0; color: #707070"
+        >
+          No events found for selected filters.
+        </p>
+
+        <!-- <div class="filters">
           <button class="filterBtn">
             Any type
             <span class="arrow"><i class="bi bi-chevron-down"></i></span>
@@ -50,8 +99,8 @@
             Any category
             <span class="arrow"><i class="bi bi-chevron-down"></i></span>
           </button>
-        </div>
-        <div class="event">
+        </div> -->
+        <!-- <div class="event">
           <div class="eventImage">
             <img src="/assets/images/event_webp.png" alt="" />
           </div>
@@ -74,10 +123,9 @@
             </p>
             <p class="eventLocation">Hobbies and Passions (25 km)</p>
             <div class="eventMeta">
-      <span class="attendees">99 attendees</span>
-    </div>
+              <span class="attendees">99 attendees</span>
+            </div>
           </div>
-          
         </div>
         <div class="event">
           <div class="eventImage">
@@ -86,16 +134,15 @@
           <div class="eventText">
             <p class="eventData">Wed, Mar 13 · 11:30 PM UTC</p>
             <p class="eventTitle">
-              NYC AI Users - AI Tech Talks, Demo & Social: RAG
-Search and Customer Experience
+              NYC AI Users - AI Tech Talks, Demo & Social: RAG Search and
+              Customer Experience
             </p>
             <p class="eventLocation">Technology (50 km)</p>
             <div class="eventMeta">
-      <span class="attendees">43 attendees</span>
-      <span class="spots">2 spots left</span>
-    </div>
+              <span class="attendees">43 attendees</span>
+              <span class="spots">2 spots left</span>
+            </div>
           </div>
-          
         </div>
         <div class="event">
           <div class="eventImage">
@@ -104,12 +151,10 @@ Search and Customer Experience
           <div class="eventText">
             <p class="eventData">Wed, Mar 13 · 11:30 PM UTC</p>
             <p class="eventTitle">
-              Book 40+ Appointments Per Month Using AI and
-Automation
+              Book 40+ Appointments Per Month Using AI and Automation
             </p>
             <p class="eventLocation">Technology</p>
           </div>
-          
         </div>
         <div class="event">
           <div class="eventImage">
@@ -117,15 +162,12 @@ Automation
           </div>
           <div class="eventText">
             <p class="eventData">Wed, Mar 13 · 11:00 PM UTC</p>
-            <p class="eventTitle">
-              Dump writing group weekly meetup
-            </p>
+            <p class="eventTitle">Dump writing group weekly meetup</p>
             <p class="eventLocation">Hobbies and Passions</p>
             <div class="eventMeta">
-      <span class="attendees">77 attendees</span>
-    </div>
+              <span class="attendees">77 attendees</span>
+            </div>
           </div>
-          
         </div>
         <div class="event">
           <div class="eventImage">
@@ -134,46 +176,43 @@ Automation
           <div class="eventText">
             <p class="eventData">Thu, Mar 14 · 11:00 PM UTC</p>
             <p class="eventTitle">
-              Over 40s, 50s, & 60s Senior Singles Chat, Meet &
-Dating Community
+              Over 40s, 50s, & 60s Senior Singles Chat, Meet & Dating Community
             </p>
             <p class="eventLocation">Hobbies and Passions</p>
             <div class="eventMeta">
-      <span class="attendees">140 attendees</span>
-    </div>
+              <span class="attendees">140 attendees</span>
+            </div>
           </div>
-          
-        </div>
+        </div> -->
       </div>
       <div class="mapBlock">
-  <p class="mapHint">Find events near</p>
-  <h3 class="mapTitle">New York, NY</h3>
+        <p class="mapHint">Find events near</p>
+        <h3 class="mapTitle">New York, NY</h3>
 
-  <div class="mapCard">
-    <button class="mapClose" aria-label="Close">
-      <svg
-    class="closeIcon"
-    width="12"
-    height="12"
-    viewBox="0 0 24 24"
-    fill="none"
-  >
-    <path
-      d="M6 6L18 18M18 6L6 18"
-      stroke="currentColor"
-      stroke-width="2.2"
-      stroke-linecap="round"
-    />
-  </svg>
-</button>
+        <div class="mapCard">
+          <button class="mapClose" aria-label="Close">
+            <svg
+              class="closeIcon"
+              width="12"
+              height="12"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M6 6L18 18M18 6L6 18"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
 
-    <a class="mapBtn" href="#">
-      Browse in map
-      <span class="mapIcon" aria-hidden="true">⤢</span>
-    </a>
-  </div>
-</в>
-
+          <a class="mapBtn" href="#">
+            Browse in map
+            <span class="mapIcon" aria-hidden="true">⤢</span>
+          </a>
+        </div>
+      </div>
     </main>
 
     <footer>

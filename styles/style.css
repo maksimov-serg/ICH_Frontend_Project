@@ -23,7 +23,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
   margin-bottom: 71px;
 }
 h3 {
@@ -32,12 +31,14 @@ h3 {
 input {
   min-height: 42px;
   border: 1px solid #d9d9d9;
+  box-sizing: border-box;
 }
 p {
   font-size: 16px;
 }
 .navbarLeft {
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 .logo {
@@ -45,13 +46,16 @@ p {
   cursor: pointer;
 }
 .inputSearch {
-  min-width: 300px;
+  width: 300px;
   padding-left: 13px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
 .inputWrapper {
   position: relative;
+}
+.btnWrapper .btnSearch {
+  display: none;
 }
 .btnSearch {
   position: absolute;
@@ -66,7 +70,7 @@ p {
   border-bottom-right-radius: 10px;
 }
 .inputView {
-  min-width: 294px;
+  width: 294px;
   padding-left: 17px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -89,8 +93,10 @@ p {
   border-radius: 8px;
 }
 main {
-  max-width: 1196px;
+  max-width: 1208px;
   margin: 0 auto;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 h1 {
   font-size: 42px;
@@ -99,7 +105,7 @@ h1 {
 .meetUp {
   display: flex;
   align-items: center;
-  margin-bottom: 122px;
+  padding-bottom: 122px;
 }
 .meetUpLeft p {
   font-size: 16px;
@@ -116,18 +122,21 @@ h1 {
 .eventsTop {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 24px;
 }
 .eventsTop button {
-  width: 239px;
-  height: 44px;
+  width: auto;
+  max-width: 100%;
+  padding: 10px 14px;
   background-color: #97cad11f;
   color: #00798a;
   border: none;
   border-radius: 8px;
   font-size: 20px;
   font-weight: 600;
+  white-space: nowrap;
 }
 .eventsTop img {
   margin-left: 15px;
@@ -151,7 +160,8 @@ h1 {
 }
 
 .cardEvent {
-  max-width: 272px;
+  width: 100%;
+  max-width: none;
 }
 .eventsCardTop img {
   width: 100%;
@@ -275,13 +285,15 @@ p {
 }
 .meetUpWorkItems {
   display: flex;
-  justify-content: space-between;
+  gap: 32px;
   margin-bottom: 64px;
 }
 .workItem {
   display: flex;
   background-color: #97cad114;
-  min-width: 580px;
+  min-width: 0;
+  width: 100%;
+  padding-bottom: 24px;
 }
 .workItemSvg {
   margin: 32px 24px 0;
@@ -337,8 +349,10 @@ footer {
   color: #f6f7f8;
 }
 .footerContainer {
-  max-width: 1120px;
+  max-width: 1150px;
   margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .footerTop {
   display: flex;
@@ -395,6 +409,7 @@ footer a {
 }
 .stores {
   display: flex;
+  flex-wrap: wrap;
   gap: 23px;
 }
 .stores img {
@@ -404,6 +419,7 @@ footer a {
   display: flex;
   padding-top: 32px;
   padding-bottom: 40px;
+  flex-wrap: wrap;
   gap: 24px;
 }
 .footerBottom ul {
@@ -567,4 +583,199 @@ footer a {
 
 .mapIcon {
   font-size: 16px;
+}
+@media (max-width: 1024px) {
+  .navbarLeft {
+    flex: 1;
+  }
+  .btnWrapper {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .btnWrapper .inputSearch {
+    flex: 1;
+    width: auto;
+    border-right: 0;
+    border-radius: 10px 0 0 10px;
+  }
+
+  .btnWrapper .btnSearch {
+    position: static;
+    transform: none;
+    flex: 0 0 42px;
+  }
+  .inputSearch {
+    margin-left: 15px;
+  }
+  .logo {
+    margin: 0;
+  }
+
+  .navbarLeft > .inputWrapper:not(.btnWrapper) {
+    display: none;
+  }
+  .btnWrapper .btnSearch {
+    display: block;
+  }
+  .btnWrapper {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .btnWrapper .inputSearch {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+  }
+  header {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .meetUp {
+    flex-direction: column;
+  }
+  br {
+    display: none;
+  }
+  .meetUpWorkItems {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}
+@media (max-width: 768px) {
+  .sign {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "image"
+      "text"
+      "btn";
+    row-gap: 16px;
+    text-align: center;
+    justify-items: center;
+  }
+
+  .signLeft {
+    display: contents;
+  }
+
+  .signLeft h3 {
+    grid-area: title;
+  }
+  .signRight {
+    grid-area: image;
+  }
+  .signLeft p {
+    grid-area: text;
+  }
+  .signLeft button {
+    grid-area: btn;
+    justify-self: center;
+  }
+
+  .signRight img {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+    display: block;
+  }
+}
+
+@media (max-width: 576px) {
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    row-gap: 14px;
+    align-items: center;
+  }
+
+  .navbarLeft {
+    grid-column: 1 / 2;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .navbarRight {
+    grid-column: 2 / 3;
+    grid-row: 1;
+    justify-self: end;
+  }
+
+  .btnWrapper {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-self: center;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .btnWrapper .inputSearch,
+  .btnWrapper .btnSearch {
+    height: 34px;
+  }
+
+  .stores {
+    gap: 5px;
+    flex-direction: column;
+  }
+
+  .stores img {
+    width: 100px;
+  }
+}
+
+@media (max-width: 393px) {
+  .stores img {
+    display: none;
+  }
+  .footerBottom ul {
+    display: none;
+  }
+}
+
+.filters {
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.filterField {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.filterLabel {
+  font-size: 12px;
+  font-weight: 500;
+  color: #707070;
+}
+
+.filterControl {
+  min-height: 42px;
+  border: none;
+  border-radius: 999px;
+  background: #f6f7f8;
+  padding: 0 16px;
+  font-size: 14px;
+}
+
+.filterControl:focus {
+  outline: 2px solid rgba(0, 121, 138, 0.35);
+}
+
+.filterResetBtn {
+  height: 42px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 2px solid #00798a;
+  background: transparent;
+  color: #00798a;
+  font-weight: 600;
 }
